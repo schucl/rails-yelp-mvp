@@ -1,0 +1,36 @@
+<div class="container">
+  <h1><%= @restaurant.name %> Details</h1>
+
+<br>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @restaurant.category %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>Phone Number:</strong>
+  <%= @restaurant.phone_number %>
+</p>
+  <button type="button" class="btn btn-primary">
+    <%= link_to "Edit", edit_restaurant_path(@restaurant) %>
+  </button>
+  <button type="button" class="btn btn-primary">
+    <%= link_to "Back", restaurants_path(@restaurant) %>
+  </button>
+  <button type="button" class="btn btn-danger">
+    <%= link_to "Delete", restaurant_path(@restaurant), method: :delete %>
+  </button>
+
+
+</div>

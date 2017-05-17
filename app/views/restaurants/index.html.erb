@@ -1,0 +1,33 @@
+<div class="container">
+ <h1>My Restaurants</h1>
+ <br>
+ <button type="button" class="btn btn-primary">
+
+ <%= link_to "Add Restaurant", new_restaurant_path %>
+  </button>
+<br><br>
+ <div class="card">
+  <div class="card-block">
+    <% @restaurants.each do |restaurant| %>
+
+    <h4 class="card-title"><%= restaurant.name %></h4>
+    <h6 class="card-subtitle mb-2 text-muted"><%= restaurant.category %></h6>
+    <p class="card-text">Address: <%= restaurant.address %><br>
+      Phone: <%= restaurant.phone_number %></p>
+      <button type="button" class="btn btn-primary">
+        <%= link_to "Details", restaurant_path(restaurant) %>
+      </button>
+      <button type="button" class="btn btn-primary">
+        <%= link_to "Edit", edit_restaurant_path(restaurant) %>
+      </button>
+      <button type="button" class="btn btn-danger">
+        <%= link_to "Delete", restaurant_path(restaurant), method: :delete %>
+      </button>
+      <br><br>
+      <% end  %>
+    </div>
+  </div>
+
+</div>
+
+
